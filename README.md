@@ -1,1 +1,2 @@
-# Online-Code-Editor
+# CodeSet
+An online code editor.

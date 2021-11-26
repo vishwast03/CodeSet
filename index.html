@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="./style.css">
+    <title>CodeSet</title>
+</head>
+
+<body>
+    <div class="code-editor">
+        <!-- Navbar -->
+        <nav class="codeset-navbar">
+            <!-- Logo and name -->
+            <a href="./index.html" class="logo-icon">
+                <img src="./logo.png" alt="logo">
+                <h1>Code<span>Set</span></h1>
+            </a>
+            <!-- Theme switching button -->
+            <button class="theme-switch">
+                <span>light</span>
+                <span>dark</span>
+                <span class="switch"></span>
+            </button>
+        </nav>
+        <!-- Main section -->
+        <main class="working-section">
+            <!-- setting controls -->
+            <div class="control">
+                <div class="panels">
+                    <button class="btn active-btn" id="html-btn" data-target="html-toggle">HTML</button>
+                    <button class="btn" id="css-btn" data-target="css-toggle">CSS</button>
+                    <button class="btn" id="js-btn" data-target="js-toggle">JavaScript</button>
+                    <button class="btn active-btn" id="output-btn" data-target="output-toggle">Output</button>
+                </div>
+                <!-- Run options -->
+                <div class="run-options">
+                    <label for="auto-run" class="auto-run-checkbox">
+                        <input type="checkbox" name="auto-run" id="auto-run">
+                        Auto Run
+                    </label>
+                    <!-- run button -->
+                    <button class="run-btn">Run</button>
+                </div>
+            </div>
+            <!-- coding area -->
+            <section class="coding-area">
+                <!-- html area -->
+                <div class="area" id="html-area" data-target="html-toggle">
+                    <div class="area-title">HTML</div>
+                    <textarea class="code-textarea" autocomplete="off" wrap="logical" spellcheck="false"></textarea>
+                </div>
+                <!-- css area -->
+                <div class="area hide-area" id="css-area" data-target="css-toggle">
+                    <div class="area-title">CSS</div>
+                    <textarea class="code-textarea" autocomplete="off" wrap="logical" spellcheck="false"></textarea>
+                </div>
+                <!-- javascript area -->
+                <div class="area hide-area" id="js-area" data-target="js-toggle">
+                    <div class="area-title">JavaScript</div>
+                    <textarea class="code-textarea" autocomplete="off" wrap="logical" spellcheck="false"></textarea>
+                </div>
+                <!-- output area -->
+                <div class="area" id="output-area" data-target="output-toggle">
+                    <div class="area-title">Output</div>
+                    <!-- <textarea id="disabled-textarea" disabled></textarea> -->
+                    <div class="iframe-container">
+                        <iframe class="output-iframe"></iframe>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+    <script src="./app.js"></script>
+</body>
+
+</html>
