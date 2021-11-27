@@ -5,13 +5,13 @@ const codeEditor = document.querySelector('.code-editor');
 themeSwitch.addEventListener('click', () => {
     if (!themeSwitch.classList.contains('switch-dark')) {
         themeSwitch.classList.add('switch-dark');
-        if(!codeEditor.classList.contains('dark-theme-active')) {
+        if (!codeEditor.classList.contains('dark-theme-active')) {
             codeEditor.classList.add('dark-theme-active');
         }
     }
     else {
         themeSwitch.classList.remove('switch-dark');
-        if(codeEditor.classList.contains('dark-theme-active')) {
+        if (codeEditor.classList.contains('dark-theme-active')) {
             codeEditor.classList.remove('dark-theme-active');
         }
     }
@@ -74,19 +74,33 @@ const runCode = () => {
 
 runButton.addEventListener('click', runCode);
 
+// add starter code and comments
+const fillStarterCode = () => {
+    htmlTextarea.value =
+`<!DOCTYPE html>
+<html lang="en">
+<body>
+
+</body>
+</html>`;
+
+    cssTextarea.value = `/* Write CSS here */`;
+
+    jsTextarea.value = `// Write JavaScript here`;
+};
+
+fillStarterCode();
+
 // auto-run code
 const autoRunCheckbox = document.querySelector('#auto-run');
-let typingTimer;
-let doneTypingInterval = 800;
+let autoRunTimer;
+let autoRunInterval = 2200;
 
 autoRunCheckbox.addEventListener('click', () => {
     if (autoRunCheckbox.checked) {
-        codingArea.addEventListener('keyup', () => {
-            clearTimeout(typingTimer);
-            typingTimer = setTimeout(runCode, doneTypingInterval);
-        });
-        codingArea.addEventListener('keydown', () => {
-            clearTimeout(typingTimer);
-        });
+        autoRunTimer = setInterval(runCode, autoRunInterval);
+    }
+    else {
+        clearInterval(autoRunTimer);
     }
 });
