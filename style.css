@@ -133,6 +133,7 @@
     margin: 0 5px;
     padding: 4px;
     cursor: pointer;
+    transition: color 0.2s ease;
 }
 .auto-run-checkbox input {
     cursor: pointer;
@@ -146,7 +147,7 @@
     color: var(--color-white);
     font-weight: bold;
     cursor: pointer;
-    transition: background-color 0.3s ease;
+    transition: background-color 0.2s ease;
 }
 .run-btn:hover {
     background: var(--color-primary-2);
@@ -158,6 +159,7 @@
     height: 92%;
     display: grid;
     grid-template-columns: repeat(2, 1fr);
+    transition: background-color 0.2s ease;
 }
 .area {
     border: 2px solid var(--color-primary);
@@ -178,6 +180,9 @@
     border: none;
     outline: none;
     padding: 5px;
+    font-size: 1.1rem;
+    transition: background-color 0.2s ease,
+                color 0.2s ease;
 }
 .iframe-container {
     width: 100%;
@@ -187,7 +192,32 @@
     width: 100%;
     height: 100%;
     border: transparent;
+    background: white;
 }
 .hide-area {
     display: none;
+}
+
+/* dark theme */
+.dark-theme-active .control {
+    background: #152e2d;
+    border-top: 1px solid #dadada;
+}
+.dark-theme-active .panels .btn {
+    background: var(--color-dark-gray);
+    border-color: white;
+    color: white;
+}
+.dark-theme-active .panels .active-btn {
+    border-color: var(--color-primary) !important;
+}
+.dark-theme-active .auto-run-checkbox {
+    color: white;
+}
+.dark-theme-active .coding-area {
+    background: #121212;
+}
+.dark-theme-active .code-textarea {
+    background: #121212;
+    color: white;
 }

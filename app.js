@@ -1,12 +1,19 @@
 const themeSwitch = document.querySelector('.theme-switch');
+const codeEditor = document.querySelector('.code-editor');
 
 // changing theme on click
 themeSwitch.addEventListener('click', () => {
     if (!themeSwitch.classList.contains('switch-dark')) {
         themeSwitch.classList.add('switch-dark');
+        if(!codeEditor.classList.contains('dark-theme-active')) {
+            codeEditor.classList.add('dark-theme-active');
+        }
     }
     else {
         themeSwitch.classList.remove('switch-dark');
+        if(codeEditor.classList.contains('dark-theme-active')) {
+            codeEditor.classList.remove('dark-theme-active');
+        }
     }
 });
 
